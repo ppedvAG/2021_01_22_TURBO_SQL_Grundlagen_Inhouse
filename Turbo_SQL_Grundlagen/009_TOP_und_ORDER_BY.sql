@@ -22,15 +22,23 @@ ORDER BY CustomerID
 SELECT TOP 1 *
 FROM Customers
 ORDER BY CustomerID
+-- ALFKI
 
+-- anderes Ergebnis, weil nach anderen Kriterien geordnet:
 SELECT TOP 1 *
 FROM Customers
 ORDER BY Country
+-- CACTU
+
+SELECT TOP 1 *
+FROM Customers
+ORDER BY City
+-- DRACD
 
 SELECT TOP 1 *
 FROM Customers
 ORDER BY Address -- möglich, macht aber keinen Sinn
-
+-- LAMAI
 
 -- nicht alle Spalten, sondern nur bestimmte:
 SELECT TOP 1	  CustomerID
@@ -42,7 +50,7 @@ ORDER BY Country
 
 
 
-
+-- mehrere ZEILEN (TOP 10):
 SELECT TOP 10	  CustomerID
 				, CompanyName
 				, ContactName
@@ -54,6 +62,7 @@ ORDER BY Country
 
 
 -- man kann auch die TOP % abfragen:
+-- PERCENT ausschreiben!
 SELECT TOP 10 PERCENT *
 FROM Customers
 ORDER BY CustomerID
@@ -74,7 +83,32 @@ ORDER BY Freight
 
 
 
--- die letzten 3:
-SELECT TOP 3 *
+SELECT TOP 5 PERCENT	  CustomerID
+						, CompanyName
+						, Phone
 FROM Customers
-ORDER BY CustomerID DESC -- Reihenfolge mit DESC umkehren
+ORDER BY CustomerID -- ASC-- ascending (in aufsteigender Reihenfolge, vom kleinsten zum größten Wert geordnet) (default)
+
+
+-- die letzten 3:
+SELECT TOP 3	  CustomerID
+				, CompanyName
+				, Phone
+FROM Customers
+ORDER BY CustomerID DESC -- descending (in absteigender Reihenfolge, vom größten zum kleinsten Wert geordnet)
+
+
+-- eine Möglichkeit, den niedrigsten Frachtkostenwert zu ermitteln, wäre mit TOP-Befehl:
+SELECT TOP 1 Freight
+FROM Orders
+ORDER BY Freight
+-- 0.02
+
+
+
+-- höchster Frachtkostenwert:
+SELECT TOP 1 Freight
+FROM Orders
+ORDER BY Freight DESC
+-- 1007,64
+

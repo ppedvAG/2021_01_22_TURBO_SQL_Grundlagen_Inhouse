@@ -155,7 +155,7 @@ SELECT	  DATEDIFF(DD, RequiredDate, ShippedDate) AS Lieferverzögerung
 FROM Orders
 
 -- wie viele Tage hätten wir noch Zeit, um fristgerecht zu liefern?
-SELECT	  DATEDIFF(DD, ShippedDate, RequiredDate) AS Lieferverzögerung
+SELECT	  DATEDIFF(DD, ShippedDate, RequiredDate) AS Frist
 		, RequiredDate
 		, ShippedDate
 FROM Orders

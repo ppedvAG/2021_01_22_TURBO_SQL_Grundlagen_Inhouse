@@ -28,6 +28,9 @@ WHERE Operatoren =, <, >, <=, >=
 
 		AND, OR
 
+		IS NULL
+		IS NOT NULL
+
 */
 
 

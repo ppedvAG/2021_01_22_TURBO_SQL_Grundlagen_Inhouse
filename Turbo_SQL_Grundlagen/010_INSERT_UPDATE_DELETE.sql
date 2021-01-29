@@ -34,7 +34,7 @@ INSERT INTO Produkte (ProduktID, ProduktName, Preis)
 VALUES (1, 'Spaghetti', 1.99)
 
 
-
+-- wenn wir eine ID automatisch generieren lassen (hier mit IDENTITY), lassen wir die Spalte beim Einfügen aus:
 INSERT INTO Produkte (Preis, ProduktName)
 VALUES (1.99, 'Spaghetti')
 
@@ -69,4 +69,11 @@ DELETE FROM Produkte
 WHERE ProduktID = 3
 
 
+
+DELETE FROM Produkte
+WHERE ProduktID IN(4, 5)
+
+
+SELECT *
+FROM Produkte
 

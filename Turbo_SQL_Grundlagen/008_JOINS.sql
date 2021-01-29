@@ -38,13 +38,23 @@ SELECT	  OrderID
 FROM Orders INNER JOIN Customers
 	ON Orders.CustomerID = Customers.CustomerID
 
--- kürzere Schreibweise
-SELECT	  OrderID
-		, c.CustomerID
-		, CompanyName
-		, ShippedDate
-FROM Orders o INNER JOIN Customers c
-	ON o.CustomerID = c.CustomerID
+
+-- bisschen kürzere Schreibweise:
+SELECT	  o.OrderID AS Bestellnr
+		, o.CustomerID
+		, c.CompanyName
+		, c.ContactName
+		, c.Phone
+FROM Orders AS o INNER JOIN Customers AS c ON o.CustomerID = c.CustomerID
+
+
+-- noch ein bisschen kürzer (ohne AS):
+SELECT	  o.OrderID AS Bestellnr
+		, o.CustomerID
+		, c.CompanyName
+		, c.ContactName
+		, c.Phone
+FROM Orders o INNER JOIN Customers c ON o.CustomerID = c.CustomerID
 
 
 
